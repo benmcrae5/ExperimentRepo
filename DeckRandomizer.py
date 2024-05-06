@@ -69,13 +69,31 @@ def runMultiShuffle(deck, shuffleMethod, iterations, reportBool=False):
             print(newDeck)
     return newDeck
 
-def runChainShuffle():
-    
+def runChainShuffle(deck, iterations, reportBool=False):
+    #run multiple shuffle types together
+    #functions may only have one parameter (deck), but can have multiple parameters if pre-set
+    newDeck = deck.copy()
+    ShuffleTypesArray = [stackShuffle, shuffleTopBottom, randomShuffler, standardShuffle]
+    x = 0
+    while x < iterations:
+        randomIdx = int(random.random()*len(ShuffleTypesArray))
+        randomFunc = ShuffleTypesArray[randomIdx]
+        newDeck = randomFunc(newDeck)
+        x+=1
+        if reportBool:
+            print("Iteration: " + str(x) + " -->")
+            print("Random Idx:  " + str(randomIdx) )
+            print(newDeck)
+    return newDeck
 
-    
+
+#TEST AREA
+
+#print(runChainShuffle(StartDeck, 4, True))
 #print(runMultiShuffle(StartDeck, shuffleTopBottom, 4, False))
 #print(runMultiShuffle(StartDeck, standardShuffle, 4, False))
 #print(runMultiShuffle(StartDeck, stackShuffle, 4, True))
 #print(randomShuffler(StartDeck))
 #print(standardShuffle(StartDeck))
+
 
