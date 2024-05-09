@@ -1,16 +1,9 @@
 import random
 import math
+import DiceRandomizer
 
 #Starting Deck is a standard 52 card deck, using simple numbers from 0 to 51
 StartDeck = list(range(52))
-
-#Provide the number of sides for a dice, get a random roll.
-#TO BE MOVED TO ANOTHER FILE
-def rollDice(sides, report=False):
-    result = int(random.random()*sides)
-    if report:
-        print(result)
-    return result
 
 #alternate putting cards into piles, then stack the piles in a random order. 
 def stackShuffle(deck, piles=5):
@@ -94,6 +87,7 @@ def runChainShuffle(deck, iterations, reportBool=False):
             print(newDeck)
     return newDeck
 
+print(DiceRandomizer.rollDice(6))
 
 #TEST AREA
 
