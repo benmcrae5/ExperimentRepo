@@ -87,7 +87,6 @@ def runChainShuffle(deck, iterations, reportBool=False):
             print(newDeck)
     return newDeck
 
-print(DiceRandomizer.rollDice(6))
 
 #TEST AREA
 
@@ -98,5 +97,6 @@ print(DiceRandomizer.rollDice(6))
 #print(runMultiShuffle(StartDeck, stackShuffle, 4, True))
 #print(randomShuffler(StartDeck))
 #print(standardShuffle(StartDeck))
+#print(DiceRandomizer.rollDice(6))
 
 
