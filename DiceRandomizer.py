@@ -39,10 +39,3 @@ def riskDiceBattle(p1NumDice = 3, p2NumDice = 2):
             results[1] += 1
         countDown -= 1
     return results
-    
-            
-#TEST AREA
-        
-#for x in range(10):
-    #singleDiceBattle(20)
-print(riskDiceBattle())

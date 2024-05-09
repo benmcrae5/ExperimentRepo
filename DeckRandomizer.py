@@ -1,6 +1,5 @@
 import random
-import math
-import DiceRandomizer
+import DiceRandomizer as DR
 
 #Starting Deck is a standard 52 card deck, using simple numbers from 0 to 51
 StartDeck = list(range(52))
@@ -86,17 +85,5 @@ def runChainShuffle(deck, iterations, reportBool=False):
             print("Random Idx:  " + str(randomIdx) )
             print(newDeck)
     return newDeck
-
-
-#TEST AREA
-
-#print(StartDeck)
-#print(runChainShuffle(StartDeck, 4, True))
-#print(runMultiShuffle(StartDeck, shuffleTopBottom, 4, False))
-#print(runMultiShuffle(StartDeck, standardShuffle, 4, False))
-#print(runMultiShuffle(StartDeck, stackShuffle, 4, True))
-#print(randomShuffler(StartDeck))
-#print(standardShuffle(StartDeck))
-#print(DiceRandomizer.rollDice(6))
 
 
