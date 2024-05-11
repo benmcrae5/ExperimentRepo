@@ -7,7 +7,8 @@ def rollDice(sides, report=False):
         print(result)
     return result
 
-def singleDiceBattle(sides):
+#two players roll an X-sided dice. Compares result and prints answer
+def singleDiceBattle(sides=6):
     player1Roll = rollDice(sides)
     player2Roll = rollDice(sides)
     if player1Roll == player2Roll:
@@ -20,14 +21,15 @@ def singleDiceBattle(sides):
     else:
         print(f'Player {win} wins!')
 
-def riskDiceBattle(p1NumDice = 3, p2NumDice = 2):
+#two players roll amounts of dice, compare pairs of highest values to lowest values. 
+def riskDiceBattle(p1NumDice = 3, p2NumDice = 2, sides=6):
     p1Rolls = []
     p2Rolls = []
     for x in range(p1NumDice+p2NumDice):
         if x < p1NumDice:
-            p1Rolls.append(rollDice(6))
+            p1Rolls.append(rollDice(sides))
         else:
-            p2Rolls.append(rollDice(6))
+            p2Rolls.append(rollDice(sides))
     p1Rolls.sort()
     p2Rolls.sort()
     results = [0,0]
@@ -40,6 +42,7 @@ def riskDiceBattle(p1NumDice = 3, p2NumDice = 2):
         countDown -= 1
     return results
 
+#Basic DnD Rolling, using advantage and disadvantage rules.
 def dndSkillCheck(dc, adv=False, disadv=False, report=False):
     rolls = [int(random.random()*20) + 1]
     if adv or disadv:
