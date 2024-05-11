@@ -39,3 +39,20 @@ def riskDiceBattle(p1NumDice = 3, p2NumDice = 2):
             results[1] += 1
         countDown -= 1
     return results
+
+def dndSkillCheck(dc, adv=False, disadv=False, report=False):
+    rolls = [int(random.random()*20) + 1]
+    if adv or disadv:
+        rolls.append(int(random.random()*20) + 1)
+    if report:
+        print(rolls)
+    if adv == disadv:
+        return True if rolls[0] >= dc else False
+    if adv:
+        return True if max(rolls) >= dc else False
+    if disadv:
+        return True if min(rolls) >= dc else False
+
+
+
+        
