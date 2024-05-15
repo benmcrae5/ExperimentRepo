@@ -1,5 +1,6 @@
 import random
 import DiceRandomizer as DR
+import math
 
 #Starting Deck is a standard 52 card deck, using simple numbers from 0 to 51
 StartDeck = list(range(52))

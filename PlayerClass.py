@@ -29,12 +29,6 @@ class Player:
         return self.priority >= other.priority
 
     #Player Functions
-    def shuffleDeck(self):
-        self.deck = DeckR.runChainShuffle(self.deck, 3)
-
-    def addCardToDeck(self, card):
-        self.deck.appent(card)
-
     def adjustLife(self, amount):
         self.life = self.life + amount
 
@@ -48,6 +42,18 @@ class Player:
                 break
             self.cardHand.append(self.deck.pop())
 
-    
+    def adjustPriority(self, newPriority):
+        self.priority = newPriority
 
-    
+    #Deck Operations
+    def organizeDeck(self):
+        self.deck.sort()
+
+    def shuffleDeck(self):
+        self.deck = DeckR.runChainShuffle(self.deck, 3)
+
+    def addCardToDeck(self, card):
+        self.deck.append(card)
+
+    def removeCardFromDeck(self, card):
+        self.deck.remove(card)
