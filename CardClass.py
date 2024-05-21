@@ -1,10 +1,10 @@
 #Card Class
 
 class CardAbility:
-    def __init__(self, player, name, cost = 0, effect1, effect2):
+    def __init__(self, name, cost = 0, effect1, effect2 = None, effect3 = None):
         self.name = name
         self.cost = cost
-        self.effects = [effect1, effect2]
+        self.effects = [effect1, effect2, effect3]
 
     def __repr__(self):
         return self.name

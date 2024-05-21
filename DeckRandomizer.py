@@ -1,6 +1,5 @@
 import random
 import DiceRandomizer as DR
-import math
 
 #Starting Deck is a standard 52 card deck, using simple numbers from 0 to 51
 StartDeck = list(range(52))
@@ -50,7 +49,7 @@ def randomShuffler(deck):
 #the "perfect" shuffle - split deck into two piles, alternate cards in a standard shuffle
 def standardShuffle(deck):
     newDeck = []
-    halfDeck = math.floor(len(deck)/2)
+    halfDeck = len(deck)//2
     for x in range(halfDeck):
         newDeck.append(deck[x])
         newDeck.append(deck[x+halfDeck])
