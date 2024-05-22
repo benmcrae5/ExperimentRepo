@@ -1,7 +1,7 @@
 #Card Class
 
 class CardAbility:
-    def __init__(self, name, cost = 0, effect1, effect2 = None, effect3 = None):
+    def __init__(self, name, cost = 0, effect1 = None, effect2 = None, effect3 = None):
         self.name = name
         self.cost = cost
         self.effects = [effect1, effect2, effect3]

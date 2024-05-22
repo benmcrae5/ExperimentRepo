@@ -2,13 +2,14 @@ import DeckRandomizer as DeckR
 
 #Generic player creation class
 class Player:
-    def __init__(self, name, cardHand = [], points = 0, life = 0, priority=0, deck=[]):
+    def __init__(self, name, cardHand= [], points= 0, life= 0, priority= 0, deck= [], resources= {}):
         self.name = name
         self.cardHand = cardHand
         self.points = points
         self.life = life
         self.priority = priority
         self.deck = deck
+        self.resources = resources
 
     def __str__(self):
         return f'{self.name}'
@@ -57,3 +58,11 @@ class Player:
 
     def removeCardFromDeck(self, card):
         self.deck.remove(card)
+
+    def payCost(self, cost = {}):
+        for key in cost:
+            assert key in self.resources, "Resource does not exist"
+            assert self.resources[key] >= cost[key], "Insufficient resources"
+            self.resources[key] -= cost[key]
+        return True
+                
