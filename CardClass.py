@@ -1,10 +1,10 @@
 #Card Class
 
 class CardAbility:
-    def __init__(self, name, cost = 0, effect1 = None, effect2 = None, effect3 = None):
+    def __init__(self, name, cost = {}, effects = []):
         self.name = name
-        self.cost = cost
-        self.effects = [effect1, effect2, effect3]
+        self.cost = cost    #Cost is a Dictionary object with {"Resource": #}
+        self.effects = []   #effects are methods with (player, target) parameters
 
     def __repr__(self):
         return self.name
@@ -19,7 +19,7 @@ class CardAbility:
     
     
 class Card:
-    def __init__(self, player, name, value, suite, cost, text, abilities = []):
+    def __init__(self, player, name, value, suite, cost, text = "", abilities = []):
         self.name = name
         self.value = value
         self.suite = suite
@@ -35,6 +35,15 @@ class Card:
 
     def playAbility(self, abilityNum, target):
         self.abilites[abilityNum].play(self.player, target)
+
+    def readCard(self):
+        print(self.text)
+
+    def assign(self, player):
+        self.player = player
+
+    def payCost(self):
+        self.player.payCost(self.cost)
 
     
 
