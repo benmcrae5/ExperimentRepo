@@ -39,7 +39,7 @@ class Card:
     def readCard(self):
         print(self.text)
 
-    def assign(self, player):
+    def assignTo(self, player):
         self.player = player
 
     def payCost(self):

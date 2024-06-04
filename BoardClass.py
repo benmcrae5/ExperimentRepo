@@ -1,9 +1,12 @@
 # Board Class
 
 class B_Node:
-    def __init__(self, name, moveOptions = []): #List of other B_Nodes
+    def __init__(self, name, onLandAbility = None, onCollectAbility = None, moveOptions = []): #List of other B_Nodes
         self.name = name
         self.moveOptions = moveOptions
+        self.onLandAbility = onLandAbility
+        self.onCollectAbility = onCollectAbility
+        
 
         
 class Board:
