@@ -19,9 +19,11 @@ char2 = CharCl.Character("Goblin",
                          {"food": 2}, 1, 1, 1, 1)
 
 z = char1
-print(z.name, z.cost, z.move, z.attack, z.defense, z.health)
+print(z._name, z._cost, z._move, z._attack, z._defense, z._health)
 z = char2
-print(z.name, z.cost, z.move, z.attack, z.defense, z.health)
+print(z._name, z._cost, z._move, z._attack, z._defense, z._health)
 print(type(char1), type(char2))
 
-char1._attack(char2)
+char1.attack(char2)
+
+char1.move()
