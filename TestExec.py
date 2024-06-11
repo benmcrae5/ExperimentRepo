@@ -3,6 +3,7 @@ import DiceRandomizer as DiceR
 import PlayerClass as PC
 import CardClass as CC
 import CharacterClass as CharCl
+import BoardClass as BC
 
 
 #TEST FILE
@@ -27,3 +28,5 @@ print(type(char1), type(char2))
 char1.attack(char2)
 
 char1.move()
+node1 = BC.B_Node("Start")
+char1.determineReach(node1)
